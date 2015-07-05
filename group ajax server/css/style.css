@@ -1,0 +1,72 @@
+#demo {
+    font-size: 25px;
+    width: 125px;
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+}
+
+#demo > li {
+    margin: 5px; 
+}
+#demo > li:hover, #demo > li:active {
+    background-color: rgba(57, 128, 255, 0.71);
+    border-radius: 5px;
+    box-shadow: 7px 10px 13px rgba(0,0,0,0.5);
+    position: relative;
+    top: -3px;
+    left: -3px;
+}
+
+.show{
+    position: relative;
+    cursor: pointer;
+    top:0;
+    left:0;
+    -webkit-animation-name: my;
+    animation-name: my;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px rgba(0,1,67,0.5);
+}
+
+@-webkit-keyframes my {
+    0% {
+        left: -500px;
+    }
+}
+
+@keyframes my {
+    0% {
+        left: -500px;
+    }
+}
+
+#info > p {
+    //background-color: rgba(57, 128, 255, 0.71);
+    display: inline-block;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    min-height: 111px;
+    width: 453px;
+    box-shadow: 7px 10px 13px rgba(0,0,0,0.5);
+    padding: 15px;
+    font-size: 25px;
+    border-radius: 10px;
+
+}
+
+#tabs > button {
+    width: 120px;
+    font-size: 22px;
+}
+
+#out {
+    width: 20px;
+    height: 20px;
+    background-image: url("../img/delete-20.png");
+    position: relative;
+    top: -161px;
+    left: 623px;
+    cursor: pointer;
+}
