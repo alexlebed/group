@@ -8,9 +8,8 @@ function initializeGroup () {
 		{name:'Sergeo', lastName:'Shilov', passport:'DC 214536'},
 		{name:'Alena', lastName:'Nabokova', passport:'ER 365214'},
 		{name:'Karina', lastName:'Petrova', passport:'CV 369872'}
-	];
-	
-    var userString = JSON.stringify(user);
+	],
+	userString = JSON.stringify(user);
 
     return userString;
 }

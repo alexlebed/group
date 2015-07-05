@@ -2,7 +2,7 @@ var http = require("http"),
     path = require("path"),
     fs = require('fs'),
     url = require('url'),
-    initialize = require("./serverInitGroup"),
+    initialize = require("./serverInitGroup");
     userGroupString = initialize.initializeGroup();
   
 
@@ -35,11 +35,11 @@ function onRequest (request, response) {
         });
 	
     } else if (fileName == 'Hello') {
-	      send(200, 'text/plain', 'Hello, \n I am SERVER!!!');
+	    send(200, 'text/plain', 'Hello, \n I am SERVER!!!');
     } else if (fileName == 'Ajax') {
-	      send(200, 'application/json', userGroupString);
+	    send(200, 'application/json', userGroupString);
     } else {
-	      send(404, "text/plain", "404 \"" + fileName + "\" Not found");
+	    send(404, "text/plain", "404 \"" + fileName + "\" Not found");
     }
 }
 

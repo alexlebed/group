@@ -3,22 +3,27 @@ var PersonView = Backbone.View.extend({
 	
 	template: _.template(list()),
 	
+	events: {
+			'click .link': 'clicked'
+	},
+	
 	initialize: function () {
 	},
 	
-	events: {
-			'click .link': 'clicked'
+    render: function () {
+		this.$el.html(this.template({collection: this.model.toJSON()}));
+
+		return this;
 	},
 	
 	clicked: function () {
 		$('#tabs, #view').html('');
 		mediator.publish('ShowTabs', this.model);
 		mediator.publish('Preview', this.model.get('name'));
-	},
-	
-	render: function () {
-		this.$el.html(this.template({collection: this.model.toJSON()}));
-
-		return this;
+		mediator.publish('Destroy', this.model);
 	}
+
+
+	
+	
 });

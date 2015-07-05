@@ -4,9 +4,7 @@ var PreView = Backbone.View.extend({
     events: {
 		'click #close': 'close'
 	},
-		close: function () {
-		$('#tabs, #view').html('');
-	},
+	
 	initialize: function () {
 	},
 	
@@ -15,6 +13,10 @@ var PreView = Backbone.View.extend({
 		$('#view').append(this.$el);
 		
 		return this;
-	}
+	},
 	
+	close: function (model) {
+		$('#tabs, #view').html('');
+
+	}
 });

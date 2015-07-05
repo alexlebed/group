@@ -2,10 +2,10 @@ function Controller () {
 	'use strict';
 	var view;
 	
-	this.start = function (group) {
+	this.start = function (peopleCollection) {
 		mediator.subscribe('ShowTabs', tabs);
 		mediator.subscribe('Preview', preview);
-		view = new PeopleView ();
+		view = new PeopleView (peopleCollection);
 	};
 
 	function tabs (model) {
@@ -16,7 +16,7 @@ function Controller () {
 	function preview (model) {
 		view = new PreView ({model: model});
 		view.render();
-	}	
+	}
 	
     return this;
 }

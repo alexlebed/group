@@ -2,8 +2,24 @@ var TabsView = Backbone.View.extend({
 	template: _.template(button()),
 	
 	events: {
-		'click button': 'clicked',
-		'click #close': 'close'
+		'click button': 'clicked'
+	},
+	
+	initialize: function () {
+		this.model.on('destroy', this.remove, this);
+	},
+	
+	render: function () {
+		this.model.set({
+			 all: 'all'
+		});
+
+		studentTabs = this.model.toJSON();
+		this.$el.html(this.template({collection: studentTabs}));
+		
+		$('#tabs').append(this.$el);
+		
+		return this;
 	},
 	
 	clicked: function (e) {
@@ -21,22 +37,4 @@ var TabsView = Backbone.View.extend({
 			mediator.publish('Preview', thisClickedButton);
 		}
 	},
-	
-
-	
-	initialize: function () {
-	},
-	
-	render: function () {
-		this.model.set({
-			 all: 'all'
-		});
-
-		studentTabs = this.model.toJSON();
-		this.$el.html(this.template({collection: studentTabs}));
-		
-		$('#tabs').append(this.$el);
-		
-		return this;
-	}
 });
